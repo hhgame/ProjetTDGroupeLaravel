@@ -66,8 +66,8 @@
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
             <p class="mb-1">&copy; {{ date('Y') }} TaskFlow. Tous droits réservés.</p>
-            <a href="" class="text-white me-3">À propos</a>
-            <a href="" class="text-white">Contact</a>
+            <a href="{{view('public.about')}}" class="text-white me-3">À propos</a>
+            <a href="{{view('public.contact')}}" class="text-white">Contact</a>
         </div>
     </footer>
 </div>
