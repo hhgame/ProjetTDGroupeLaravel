@@ -5,6 +5,7 @@ use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\StatisticsController;
 
 
 /*
@@ -43,3 +44,8 @@ Route::get('/about',[PublicController::class,'about']);
 
 Route::get('/contact',[PublicController::class,'contact']);
 
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/statistiques', [StatisticsController::class, 'index'])->name('statistics.index');
+    Route::get('/activite', [StatisticsController::class, 'activity'])->name('activity.index');
+});
