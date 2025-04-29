@@ -52,7 +52,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/activite', [StatisticsController::class, 'activity'])->name('activity.index');
 });
 
-use App\Http\Controllers\ProfileController;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profil', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -60,7 +59,6 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/profil/password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
 });
 
-use App\Http\Controllers\CategoryController;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
