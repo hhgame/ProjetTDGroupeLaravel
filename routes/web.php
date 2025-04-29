@@ -31,8 +31,10 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/Acceuil',[PublicController::class,'acceuil']);
+Route::get('/home',[PublicController::class,'home']);
 
-Route::get('/Apropos',[PublicController::class,'propos']);
+Route::get('/about',[PublicController::class,'about']);
 
-Route::get('/Contact',[PublicController::class,'contact']);
+Route::get('/contact',[PublicController::class,'contact']);
+
+Route::post('/contact/submit',[PublicController::class,'submitForm']);
