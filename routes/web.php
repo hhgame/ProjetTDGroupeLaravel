@@ -42,4 +42,4 @@ Route::get('/about',[PublicController::class,'about']);
 
 Route::get('/contact',[PublicController::class,'contact']);
 
-Route::post('/contact/submit',[PublicController::class,'submitForm']);
+Route::post('/contact',[PublicController::class,'submitForm'])->name('contact.submit');
