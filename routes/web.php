@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,12 +29,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
+    Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
+    Route::get('/dashboard',[DashboardController::class, 'index']);
 });
 
 require __DIR__.'/auth.php';
 
-Route::get('/Acceuil',[PublicController::class,'acceuil']);
+Route::get('/home',[PublicController::class,'home']);
 
-Route::get('/Apropos',[PublicController::class,'propos']);
+Route::get('/about',[PublicController::class,'about']);
 
-Route::get('/Contact',[PublicController::class,'contact']);
+Route::get('/contact',[PublicController::class,'contact']);
+
+Route::post('/contact/submit',[PublicController::class,'submitForm']);
