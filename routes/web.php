@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/Acceuil',[PublicController::class,'acceuil']);
+
+Route::get('/Apropos',[PublicController::class,'propos']);
+
+Route::get('/Contact',[PublicController::class,'contact']);
