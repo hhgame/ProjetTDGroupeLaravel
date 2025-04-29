@@ -44,8 +44,31 @@ Route::get('/about',[PublicController::class,'about']);
 
 Route::get('/contact',[PublicController::class,'contact']);
 
+Route::post('/contact',[PublicController::class,'contact'])->name('contact.submit');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/statistiques', [StatisticsController::class, 'index'])->name('statistics.index');
     Route::get('/activite', [StatisticsController::class, 'activity'])->name('activity.index');
 });
+
+use App\Http\Controllers\ProfileController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profil', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profil', [ProfileController::class, 'update'])->name('profile.update');
+    Route::put('/profil/password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+});
+
+use App\Http\Controllers\CategoryController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+    Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+    Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+    Route::get('/categories/{category}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+    Route::put('/categories/{category}', [CategoryController::class, 'update'])->name('categories.update');
+    Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+});
+
+
