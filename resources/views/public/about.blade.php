@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="text-center">
-        <a href="{{view('welcome')}} " class="btn btn-outline-primary mt-3">
+        <a href=" " class="btn btn-outline-primary mt-3">
             <i class="fas fa-arrow-left me-2"></i>Retour à l'accueil
         </a>
     </div>
