@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\CategoryController;
 
 
 /*
@@ -42,4 +43,3 @@ Route::get('/about',[PublicController::class,'about']);
 
 Route::get('/contact',[PublicController::class,'contact']);
 
-Route::post('/contact',[PublicController::class,'submitForm'])->name('contact.submit');
